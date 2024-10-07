@@ -54,7 +54,7 @@ const SignIn = () => {
                     <Link to={"/signup"} >create new account?</Link>
                 </form>
                 <div className="text-center mt-4">
-                    <img src="public\l2.jpg" alt="Library" className="w-32 mx-auto animate__animated animate__bounceIn" />
+                    <img src="l2.jpg" alt="Library" className="w-32 mx-auto animate__animated animate__bounceIn" />
                 </div>
             </Box>
         </Container>
