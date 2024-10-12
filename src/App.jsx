@@ -6,14 +6,15 @@ import Home from './PAGES/Home/Home';
 import Index from './PAGES/Write/Index';
 import Update from './PAGES/Write/Update';
 import Footer from './Layout/Footer';
-import Write from './PAGES/Write/Write';
 import SignIn from './PAGES/Home/Signin';
 import SignUp from './PAGES/Home/Signup';
 import ContactUs from './PAGES/Home/Contect';
-import BookDetailsPage from './PAGES/Home/BookDetailsPage';
-import BookShowPage from './PAGES/Home/BookShowPage';
 import PrivateRoute from './PAGES/Home/PrivateRoute';
 import { CssBaseline } from '@mui/material';
+import Inventory from './PAGES/Write/Inventory';
+import ItemDetailsPage from './PAGES/Home/ItemDetailsPage';
+import SupplierManagement from './PAGES/Home/SupplierManagement';
+import InventoryList from './PAGES/Home/InventoryList';
 
 
 function App() {
@@ -37,11 +38,11 @@ function App() {
                 />
             {/* <Route path="/" element={<Home />} /> */}
             <Route path="/Index" element={<PrivateRoute><Index /></PrivateRoute>} />
-            <Route path="/BookDetails/:id" element={<PrivateRoute><BookDetailsPage /></PrivateRoute>} />
+            <Route path="/ItemDetails/:id" element={<PrivateRoute><ItemDetailsPage /></PrivateRoute>} />
             <Route path="/edit/:id" element={<PrivateRoute><Update /></PrivateRoute>} />
-            <Route path="/add" element={<PrivateRoute><Write /></PrivateRoute>} />
+            <Route path="/add" element={<PrivateRoute><Inventory /></PrivateRoute>} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/BookShow/:id" element={<PrivateRoute><BookShowPage /></PrivateRoute>} />
+            <Route path="/SupplierManagement" element={<PrivateRoute><SupplierManagement /></PrivateRoute>} />
           
 
         </Routes>

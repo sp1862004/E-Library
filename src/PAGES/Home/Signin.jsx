@@ -53,8 +53,8 @@ const SignIn = () => {
                     </Button>
                     <Link to={"/signup"} >create new account?</Link>
                 </form>
-                <div className="text-center mt-4">
-                    <img src="l2.jpg" alt="Library" className="w-32 mx-auto animate__animated animate__bounceIn" />
+                <div className="text-center mt-4 col-md-12">
+                    <img src="l2.jpg" alt="Library" className=" mx-auto animate__animated animate__bounceIn" />
                 </div>
             </Box>
         </Container>

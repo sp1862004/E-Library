@@ -1,12 +1,13 @@
-import Row1 from './Row1'
-import BooksList from './BooksList'
+import InventoryList from "./InventoryList"
+
 
 
 const Home = () => {
     return (
         <>
-            <Row1/>
-            <BooksList/>
+           
+           <InventoryList/>
+           
         </>
     )
 }

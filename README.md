@@ -1,32 +1,64 @@
-# React + Vite
+# PurInventory
 
-E-Library
+## Overview
+PurInventory is a responsive web application designed for managing inventory items efficiently. Users can add, edit, and delete items, as well as manage supplier information. The application provides a user-friendly interface with animations to enhance user experience.
 
-Welcome to E-Library, a modern and interactive platform for managing and discovering books. Our site offers users the ability to browse, read, and borrow books, while providing a seamless user experience with animations, responsiveness, and Firebase integration for authentication and database storage.
+## Features
 
-# Run
+- **User Authentication**: Secure login and registration for users.
 
-npm i
+- **Inventory Management**: Add, edit, and delete items in the inventory.
 
-npm run dev
+- **Supplier Management**: Manage supplier information including name, contact details, and items supplied.
 
-# Features
+- **Responsive Design**: Fully responsive layout for optimal viewing on devices of all sizes.
 
-User Authentication: Sign up and Sign in via email/password, or use Google Sign-in.
+- **Animated UI**: Engaging animations for a better user experience.
 
-Book Management: Users can view books, and borrow or return them with ease.
+- **Real-time Updates**: Dynamic updates to inventory and supplier lists.
 
-Animated UI: Smooth animations for book entries, forms, and navigation elements using animate.css.
+## Technologies Used
 
-Responsive Design: Fully responsive layouts using Bootstrap 5 and Material-UI components for a seamless experience across devices.
+- **Frontend**: 
+  - React.js
+  - Material-UI
+  - Bootstrap
+  - Animate.css
 
-Firebase Integration: Real-time database management for book details and user authentication.
+- **Backend**: 
+  - Firebase Realtime Database
+  - Firebase Authentication
 
-Sorting and Filtering: Sort and filter books based on different attributes (coming soon).
+## Getting Started
 
-Role-Based Access: Access control for users and admins (coming soon).
+### Prerequisites
 
-Pagination: Efficient navigation through large book collections (coming soon).
+- Node.js and npm installed on your machine.
+
+- A Firebase account for hosting the backend.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sp1862004
+  
+2. Install dependencies:
+    ```bash
+   npm install
+
+3. Start the development server:
+    ```bash
+    npm run dev
 
 
+### Usage
+
+Users can register and log in to access the inventory management system.
+
+Add new items to the inventory by filling out the provided form.
+
+Edit existing items or delete them from the inventory list.
+
+Manage supplier information through the supplier management section.
 

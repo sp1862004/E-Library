@@ -4,57 +4,58 @@ import { get, ref, update } from 'firebase/database';
 import db from '../../../firebase';
 import 'animate.css'; 
 
-const BookDetailsPage = () => {
+const ItemDetailsPage = () => {
     const { id } = useParams();
-    const [book, setBook] = useState(null); 
+    const [item, setItem] = useState(null); 
     const [userId] = useState('user1'); 
     const navigate = useNavigate(); 
 
     useEffect(() => {
         const fetchData = async () => {
-            const dbRef = ref(db, `BooksList/${id}`); 
+            const dbRef = ref(db, `InventoryList/${id}`); 
             const snapshot = await get(dbRef);
             if (snapshot.exists()) {
-                setBook(snapshot.val());
+                setItem(snapshot.val());
             } else {
-                console.log("No such book found!");
+                console.log("No such item found!");
             }
         };
 
         fetchData();
     }, [id]);
 
-    const handleBorrow = async () => {
-        const borrowRef = ref(db, `BooksList/${id}/borrowedBy/${userId}`);
-        await update(borrowRef, { borrowed: true });
-        alert('Book borrowed successfully!');
-        navigate(`/BookShow/${id}`); 
+    const handleReserve = async () => {
+        const reserveRef = ref(db, `InventoryList/${id}/reservedBy/${userId}`);
+        await update(reserveRef, { reserved: true });
+        alert('Item reserved successfully!');
+        navigate('/'); 
     };
 
-    if (!book) {
+    if (!item) {
         return <p className="text-center mt-5 mb-5">Loading...</p>;
     }
 
     return (
         <div className="container mb-5">
-            <h3 className="mt-5 mb-5">Book Details</h3>
+            <h3 className="mt-5 mb-5">Item Details</h3>
            
             <div className="row justify-content-center">
                 <div className="col-lg-12 border p-3 shadow-lg rounded animate__animated animate__fadeIn">
                     <img 
-                        src={book.imageUrl} 
+                        src={item.imageUrl} 
                         height={500} 
                         className="card-img-top shadow-lg rounded" 
-                        alt={book.title} 
+                        alt={item.itemName} 
                     />
                     <div className="card-body">
-                        <h6 className="card-title">{book.title} 
-                            <span style={{ color: '#5A639C' }}> Uploaded on: {book.uploadedAt}</span>
+                        <h6 className="card-title">{item.itemName} 
+                            <span style={{ color: '#5A639C' }}> Added on: {item.dateAdded}</span>
                         </h6>
-                        <p className="card-text mt-4 mb-3"><b>Author</b>: {book.author}</p>
-                        <p className="card-text mt-4 mb-3"><b>Rating</b>: {book.rating} / 5</p>
-                        <p className="card-text mt-4 mb-3"><b>Price</b>: ${book.price}</p>
-                        <p className="card-text">{book.description}</p>
+                        <p className="card-text mt-4 mb-3"><b>Category</b>: {item.category}</p>
+                        <p className="card-text mt-4 mb-3"><b>Supplier</b>: {item.supplierName}</p>
+                        <p className="card-text mt-4 mb-3"><b>Quantity</b>: {item.quantity}</p>
+                        
+                        <p className="card-text">{item.description}</p>
                     </div>
                     <Link 
                         to={`/edit/${id}`} 
@@ -63,11 +64,10 @@ const BookDetailsPage = () => {
                         Update
                     </Link>
 
-                   
-                    <div className="borrow-section mt-4">
-                        <h5>Borrow this Book</h5>
-                        <button onClick={handleBorrow} className="btn btn-primary mb-3">
-                            Borrow
+                    <div className="reserve-section mt-4">
+                        <h5>Reserve this Item</h5>
+                        <button onClick={handleReserve} className="btn btn-primary mb-3">
+                            Reserve
                         </button>
                     </div>
                 </div>
@@ -76,4 +76,4 @@ const BookDetailsPage = () => {
     );
 };
 
-export default BookDetailsPage;
+export default ItemDetailsPage;

@@ -1,9 +1,10 @@
-import Write1 from './Write'
+import Inventory from './Inventory'
+
 
 const Index = () => {
     return (
         <>
-            <Write1 />
+            <Inventory />
         </>
     )
 }
